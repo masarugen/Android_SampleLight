@@ -43,15 +43,11 @@ public class SampleLightActivity extends Activity implements Callback {
 	}
 
 	@Override
-	public void surfaceDestroyed(SurfaceHolder holder) {}
-
-	@Override
-	protected void onStop() {
+	public void surfaceDestroyed(SurfaceHolder holder) {
 		if (mCamera != null) {
 			mCamera.stopPreview();
 			mCamera.release();
 			mCamera = null;
 		}
-		super.onDestroy();
 	}
 }
